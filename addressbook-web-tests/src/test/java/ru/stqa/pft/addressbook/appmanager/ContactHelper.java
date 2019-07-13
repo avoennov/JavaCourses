@@ -2,12 +2,9 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 public class ContactHelper extends HelperBase{
-    //protected final ApplicationManager app = new ApplicationManager();
-    //private WebDriver wd;
 
     public ContactHelper(WebDriver wd) {
         super(wd);
@@ -29,21 +26,11 @@ public class ContactHelper extends HelperBase{
       type(By.name("email2"), contactData.getEmail2());
       type(By.name("email3"), contactData.getEmail3());
       type(By.name("homepage"), contactData.getHomepage());
-
-      wd.findElement(By.name("bday")).click();
-      new Select(wd.findElement(By.name("bday"))).selectByVisibleText(contactData.getBday());
-
-      wd.findElement(By.name("bmonth")).click();
-      new Select(wd.findElement(By.name("bmonth"))).selectByVisibleText(contactData.getBmonth());
-
+      selectFromList(By.name("bday"), contactData.getBday());
+      selectFromList(By.name("bmonth"), contactData.getBmonth());
       type(By.name("byear"), contactData.getByear());
-
-      wd.findElement(By.name("aday")).click();
-      new Select(wd.findElement(By.name("aday"))).selectByVisibleText(contactData.getAday());
-
-      wd.findElement(By.name("amonth")).click();
-      new Select(wd.findElement(By.name("amonth"))).selectByVisibleText(contactData.getAmonth());
-
+      selectFromList(By.name("aday"), contactData.getAday());
+      selectFromList(By.name("amonth"), contactData.getAmonth());
       type(By.name("ayear"), contactData.getAyear());
       type(By.name("address2"), contactData.getAddress2());
       type(By.name("notes"), contactData.getNotes());

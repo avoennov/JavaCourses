@@ -3,6 +3,7 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.WebDriver;
 
 public class HelperBase {
@@ -20,6 +21,11 @@ public class HelperBase {
         click(locator);
         wd.findElement(locator).clear();
         wd.findElement(locator).sendKeys(text);
+    }
+
+    protected void selectFromList(By locator, String text) {
+        click(locator);
+        new Select(wd.findElement(locator)).selectByVisibleText(text);
     }
 
     private boolean isAlertPresent() {
