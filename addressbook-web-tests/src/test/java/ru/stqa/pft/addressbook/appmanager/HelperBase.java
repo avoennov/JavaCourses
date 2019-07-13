@@ -28,6 +28,10 @@ public class HelperBase {
         new Select(wd.findElement(locator)).selectByVisibleText(text);
     }
 
+    protected void selectCheckbox(String text) {
+        wd.findElement(By.id(text)).click();
+    }
+
     private boolean isAlertPresent() {
         try {
             wd.switchTo().alert();

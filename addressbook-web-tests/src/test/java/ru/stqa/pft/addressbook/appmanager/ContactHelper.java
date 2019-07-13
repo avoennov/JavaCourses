@@ -3,6 +3,7 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.SelectContactData;
 
 public class ContactHelper extends HelperBase{
 
@@ -43,5 +44,22 @@ public class ContactHelper extends HelperBase{
 
     public void submitContactCreation() {
       click(By.xpath("(//input[@name='submit'])[2]"));
+    }
+
+    public void selectContact(SelectContactData selectContactData) {
+      selectCheckbox(selectContactData.getId());
+    }
+
+    public void submitContactModification() {
+      click(By.xpath("//input[@name='update']"));
+    }
+
+    public void openEditor() {
+      click(By.xpath("//img[@alt='Edit']"));
+    }
+
+    public void deleteSelectedContact() {
+      click(By.xpath("//input[@value='Delete']"));
+      wd.switchTo().alert().accept();
     }
 }
