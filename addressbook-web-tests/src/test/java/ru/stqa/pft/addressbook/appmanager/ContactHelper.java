@@ -50,6 +50,10 @@ public class ContactHelper extends HelperBase{
       selectCheckbox(selectContactData.getId());
     }
 
+    public void selectFirstContact() {
+      click(By.name("selected[]"));
+    }
+
     public void submitContactModification() {
       click(By.xpath("//input[@name='update']"));
     }
