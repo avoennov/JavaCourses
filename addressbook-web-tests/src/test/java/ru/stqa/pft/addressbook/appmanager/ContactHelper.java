@@ -53,10 +53,6 @@ public class ContactHelper extends HelperBase{
       click(By.linkText("home page"));
     }
 
-    public void returnToHome() {
-        click(By.linkText("home"));
-    }
-
     public void submitContactCreation() {
       click(By.xpath("(//input[@name='submit'])[2]"));
     }
