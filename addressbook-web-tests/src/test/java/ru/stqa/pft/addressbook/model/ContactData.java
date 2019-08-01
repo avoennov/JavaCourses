@@ -28,62 +28,6 @@ public class ContactData {
     private String notes;
     private String phone2;
 
-/*    public ContactData(String middlename, String lastname, String nickname, String title, String company, String address, String home, String mobile, String work, String fax, String email, String email2, String email3, String homepage, String bday, String bmonth, String byear, String firstname, String aday, String amonth, String ayear, String group, String address2, String notes, String phone2) {
-        this.middlename = middlename;
-        this.lastname = lastname;
-        this.nickname = nickname;
-        this.title = title;
-        this.company = company;
-        this.address = address;
-        this.home = home;
-        this.mobile = mobile;
-        this.work = work;
-        this.fax = fax;
-        this.email = email;
-        this.email2 = email2;
-        this.email3 = email3;
-        this.homepage = homepage;
-        this.bday = bday;
-        this.bmonth = bmonth;
-        this.byear = byear;
-        this.firstname = firstname;
-        this.aday = aday;
-        this.amonth = amonth;
-        this.ayear = ayear;
-        this.group = group;
-        this.address2 = address2;
-        this.notes = notes;
-        this.phone2 = phone2;
-    }
-
-    public ContactData(int id, String middlename, String lastname, String nickname, String title, String company, String address, String home, String mobile, String work, String fax, String email, String email2, String email3, String homepage, String bday, String bmonth, String byear, String firstname, String aday, String amonth, String ayear, String group, String address2, String notes, String phone2) {
-        this.id = id;
-        this.middlename = middlename;
-        this.lastname = lastname;
-        this.nickname = nickname;
-        this.title = title;
-        this.company = company;
-        this.address = address;
-        this.home = home;
-        this.mobile = mobile;
-        this.work = work;
-        this.fax = fax;
-        this.email = email;
-        this.email2 = email2;
-        this.email3 = email3;
-        this.homepage = homepage;
-        this.bday = bday;
-        this.bmonth = bmonth;
-        this.byear = byear;
-        this.firstname = firstname;
-        this.aday = aday;
-        this.amonth = amonth;
-        this.ayear = ayear;
-        this.group = group;
-        this.address2 = address2;
-        this.notes = notes;
-        this.phone2 = phone2;
-    }*/
 
     public ContactData withId(int id) {
         this.id = id;
@@ -335,13 +279,15 @@ public class ContactData {
 
         ContactData that = (ContactData) o;
 
+        if (id != that.id) return false;
         if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
         return firstname != null ? firstname.equals(that.firstname) : that.firstname == null;
     }
 
     @Override
     public int hashCode() {
-        int result = lastname != null ? lastname.hashCode() : 0;
+        int result = id;
+        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
         result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
         return result;
     }
