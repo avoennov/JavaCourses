@@ -18,7 +18,7 @@ public class NavigationHelper extends HelperBase {
       click(By.linkText("groups"));
     }
 
-    public void gotoContactPage() {
+    public void contactPage() {
       if (isElementPresent(By.tagName("h1"))
               && wd.findElement(By.tagName("h1")).getText().equals("Edit / add address book entry")
               && isElementPresent(By.name("Enter"))) {
@@ -27,7 +27,7 @@ public class NavigationHelper extends HelperBase {
       click(By.linkText("add new"));
     }
 
-    public void gotoHomePage() {
+    public void homePage() {
         if (isElementPresent(By.cssSelector("strong"))
                 && wd.findElement(By.tagName("strong")).getText().equals("Number of results: ")
                 && isElementPresent(By.name("searchstring"))) {
