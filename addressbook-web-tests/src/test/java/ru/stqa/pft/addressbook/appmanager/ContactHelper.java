@@ -73,8 +73,8 @@ public class ContactHelper extends HelperBase{
       click(By.xpath("//input[@name='update']"));
     }
 
-    public void openEditor() {
-      click(By.xpath("//img[@alt='Edit']"));
+    public void openEditor(int id) {
+      wd.findElement(By.cssSelector("a[href='" + "edit.php?id=" + id + "']")).click();
     }
 
     public void initContactCreation() {
@@ -94,8 +94,7 @@ public class ContactHelper extends HelperBase{
     }
 
     public void modify(ContactData contact) {
-        selectFirstContactById(contact.getId());
-        openEditor();
+        openEditor(contact.getId());
         fillContactForm(contact, false);
         submitContactModification();
         returnToHomePage();
