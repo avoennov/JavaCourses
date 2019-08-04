@@ -34,5 +34,6 @@ public class NavigationHelper extends HelperBase {
             return;
         }
         click(By.linkText("home"));
+        //click(By.xpath("//a[contains(text(),'home')]"));
     }
 }
