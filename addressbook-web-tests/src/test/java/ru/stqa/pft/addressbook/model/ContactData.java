@@ -28,6 +28,17 @@ public class ContactData {
     private String notes;
     private String phone2;
     private String allPhones;
+    private String allEmails;
+
+
+    public String getAllEmails() {
+        return allEmails;
+    }
+
+    public ContactData withAllEmails(String allMails) {
+        this.allEmails = allMails;
+        return this;
+    }
 
     public String getAllPhones() {
         return allPhones;
