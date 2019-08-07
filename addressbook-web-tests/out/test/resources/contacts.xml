@@ -1,0 +1,86 @@
+<list>
+  <contact>
+    <middlename>Ivanovich 0</middlename>
+    <lastname>Ivanov 0</lastname>
+    <nickname>AgentSmith 0</nickname>
+    <title>Some Title</title>
+    <company>The Matrix</company>
+    <address>K. Marksa street, 18</address>
+    <home>01-123456-07</home>
+    <mobile>02-11-223-01</mobile>
+    <work>14-256-01-28</work>
+    <fax>214-15-78-268</fax>
+    <email>test@mail.com</email>
+    <email2>test2@mail.com</email2>
+    <email3>test3@mail.com</email3>
+    <homepage>localhost</homepage>
+    <bday>5</bday>
+    <bmonth>March</bmonth>
+    <byear>2047</byear>
+    <firstname>Ivan 0</firstname>
+    <aday>6</aday>
+    <amonth>May</amonth>
+    <ayear>2017</ayear>
+    <group>test1</group>
+    <address2>Lenina street, 35</address2>
+    <notes>Some notes</notes>
+    <phone2>35-18-29</phone2>
+    <photo>src\test\resources\kitten-pizza.jpg</photo>
+  </contact>
+  <contact>
+    <middlename>Ivanovich 1</middlename>
+    <lastname>Ivanov 1</lastname>
+    <nickname>AgentSmith 1</nickname>
+    <title>Some Title</title>
+    <company>The Matrix</company>
+    <address>K. Marksa street, 18</address>
+    <home>01-123456-07</home>
+    <mobile>02-11-223-01</mobile>
+    <work>14-256-01-28</work>
+    <fax>214-15-78-268</fax>
+    <email>test@mail.com</email>
+    <email2>test2@mail.com</email2>
+    <email3>test3@mail.com</email3>
+    <homepage>localhost</homepage>
+    <bday>5</bday>
+    <bmonth>March</bmonth>
+    <byear>2047</byear>
+    <firstname>Ivan 1</firstname>
+    <aday>6</aday>
+    <amonth>May</amonth>
+    <ayear>2017</ayear>
+    <group>test1</group>
+    <address2>Lenina street, 35</address2>
+    <notes>Some notes</notes>
+    <phone2>35-18-29</phone2>
+    <photo>src\test\resources\kitten-pizza.jpg</photo>
+  </contact>
+  <contact>
+    <middlename>Ivanovich 2</middlename>
+    <lastname>Ivanov 2</lastname>
+    <nickname>AgentSmith 2</nickname>
+    <title>Some Title</title>
+    <company>The Matrix</company>
+    <address>K. Marksa street, 18</address>
+    <home>01-123456-07</home>
+    <mobile>02-11-223-01</mobile>
+    <work>14-256-01-28</work>
+    <fax>214-15-78-268</fax>
+    <email>test@mail.com</email>
+    <email2>test2@mail.com</email2>
+    <email3>test3@mail.com</email3>
+    <homepage>localhost</homepage>
+    <bday>5</bday>
+    <bmonth>March</bmonth>
+    <byear>2047</byear>
+    <firstname>Ivan 2</firstname>
+    <aday>6</aday>
+    <amonth>May</amonth>
+    <ayear>2017</ayear>
+    <group>test1</group>
+    <address2>Lenina street, 35</address2>
+    <notes>Some notes</notes>
+    <phone2>35-18-29</phone2>
+    <photo>src\test\resources\kitten-pizza.jpg</photo>
+  </contact>
+</list>
