@@ -1,27 +1,43 @@
 package ru.stqa.pft.addressbook.tests;
 
+import com.thoughtworks.xstream.XStream;
 import org.testng.annotations.*;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactCreationTests extends TestBase{
 
-  @Test(enabled = true)
-  public void testContactCreation() throws Exception {
+  @DataProvider
+  public Iterator<Object[]> contactsFromXml() throws IOException {
+    BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.xml")));
+    String xml = "";
+    String line = reader.readLine();
+    while (line != null) {
+      xml += line;
+      line = reader.readLine();
+    }
+    XStream xStream = new XStream();
+    xStream.processAnnotations(ContactData.class);
+    List<ContactData> contacts = (List<ContactData>) xStream.fromXML(xml);
+    return contacts.stream().map((g) -> new Object[] {g}).collect(Collectors.toList()).iterator();
+  }
+
+  @Test(dataProvider = "contactsFromXml")
+  public void testContactCreation(ContactData contact) {
     app.goTo().homePage();
     Contacts before = app.contact().all();
     app.goTo().contactPage();
-    File photo = new File("src/test/resources/kitten-pizza.jpg");
-    ContactData contact = new ContactData().withMiddlename("Ivanovich").withLastname("Ivanov").withNickname("AgentSmith").withTitle("Some Title").withCompany("The Matrix")
-            .withAddress("K. Marksa street, 18").withHome("01-123456-07").withMobile("02-11-223-01").withWork("14-256-01-28")
-            .withFax("214-15-78-268").withEmail("test@mail.com").withEmail2("test2@mail.com").withEmail3("test3@mail.com")
-            .withHomepage("localhost").withBday("5").withBmonth("March").withByear("2047").withFirstname("Ivan").withAday("6")
-            .withAmonth("May").withAyear("2017").withGroup("test1").withAddress2("Lenina street, 35").withNotes("Some notes").withPhone2("35-18-29").withPhoto(photo);
     app.contact().create(contact, true);
     Contacts after = app.contact().all();
     assertThat(after.size(), equalTo(before.size() + 1));
