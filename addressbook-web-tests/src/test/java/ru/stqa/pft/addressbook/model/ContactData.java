@@ -2,48 +2,123 @@ package ru.stqa.pft.addressbook.model;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
 
 @XStreamAlias("contact")
+@Entity
+@Table(name = "addressbook")
 public class ContactData {
     @XStreamOmitField
+    @Id
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "middlename")
     private String middlename;
+
+    @Column(name = "lastname")
     private String lastname;
+
+    @Column(name = "nickname")
     private String nickname;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "company")
     private String company;
+
+    @Column(name = "address")
+    @Type(type = "text")
     private String address;
+
+    @Column(name = "home")
+    @Type(type = "text")
     private String home;
+
+    @Column(name = "mobile")
+    @Type(type = "text")
     private String mobile;
+
+    @Column(name = "work")
+    @Type(type = "text")
     private String work;
+
+    @Column(name = "fax")
+    @Type(type = "text")
     private String fax;
+
+    @Column(name = "email")
+    @Type(type = "text")
     private String email;
+
+    @Column(name = "email2")
+    @Type(type = "text")
     private String email2;
+
+    @Column(name = "email3")
+    @Type(type = "text")
     private String email3;
+
+    @Column(name = "homepage")
+    @Type(type = "text")
     private String homepage;
+
+    @Column(name = "bday", columnDefinition = "TINYINT")
     private String bday;
+
+    @Column(name = "bmonth")
     private String bmonth;
+
+    @Column(name = "byear")
     private String byear;
+
+    @Column(name = "firstname")
     private String firstname;
+
+    @Column(name = "aday", columnDefinition = "TINYINT")
     private String aday;
+
+    @Column(name = "amonth")
     private String amonth;
+
+    @Column(name = "ayear")
     private String ayear;
+
+    @Transient
     private String group;
+
+    @Column(name = "address2")
+    @Type(type = "text")
     private String address2;
+
+    @Column(name = "notes")
+    @Type(type = "text")
     private String notes;
+
+    @Column(name = "phone2")
+    @Type(type = "text")
     private String phone2;
+
+    @Transient
     private String allPhones;
+
+    @Transient
     private String allEmails;
-    private File photo;
+
+    @Column(name = "photo")
+    @Type(type = "text")
+    private String photo;
 
     public File getPhoto() {
-        return photo;
+        return new File(photo);
     }
 
     public ContactData withPhoto(File photo) {
-        this.photo = photo;
+        this.photo = photo.getPath();
         return this;
     }
 
