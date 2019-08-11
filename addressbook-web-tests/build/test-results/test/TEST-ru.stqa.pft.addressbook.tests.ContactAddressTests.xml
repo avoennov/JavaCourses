@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactAddressTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-08-11T12:02:23" hostname="scorpio" time="1.453">
+  <properties/>
+  <testcase name="testContactAddress" classname="ru.stqa.pft.addressbook.tests.ContactAddressTests" time="1.453"/>
+  <system-out><![CDATA[K. Marksa street, 18
+
+K. Marksa street, 18
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

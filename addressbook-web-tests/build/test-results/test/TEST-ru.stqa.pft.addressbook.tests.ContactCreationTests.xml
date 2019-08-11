@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactCreationTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-08-11T12:01:37" hostname="scorpio" time="32.318">
+  <properties/>
+  <testcase name="testContactCreation[0](ContactData{id=0, lastname='Ivanov 0', firstname='Ivan 0'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="10.6"/>
+  <testcase name="testContactCreation[1](ContactData{id=0, lastname='Ivanov 1', firstname='Ivan 1'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="10.813"/>
+  <testcase name="testContactCreation[2](ContactData{id=0, lastname='Ivanov 2', firstname='Ivan 2'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="10.903"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Security framework of XStream not initialized, XStream is probably vulnerable.
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221565395285947%22 is not a valid URL..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:201:13
+
+]]></system-err>
+</testsuite>
