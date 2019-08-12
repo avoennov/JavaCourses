@@ -63,7 +63,7 @@ public class ContactDataGenerator {
                     .withAddress("K. Marksa street, 18").withHome("01-123456-07").withMobile("02-11-223-01").withWork("14-256-01-28")
                     .withFax("214-15-78-268").withEmail("test@mail.com").withEmail2("test2@mail.com").withEmail3("test3@mail.com")
                     .withHomepage("localhost").withBday("5").withBmonth("March").withByear("2047").withFirstname(String.format("Ivan %s", i))
-                    .withAday("6").withAmonth("May").withAyear("2017").withGroup("test1").withAddress2("Lenina street, 35")
+                    .withAday("6").withAmonth("May").withAyear("2017").withGroup("test 1").withAddress2("Lenina street, 35")
                     .withNotes("Some notes").withPhone2("35-18-29").withPhoto(photo));
         }
         return contacts;

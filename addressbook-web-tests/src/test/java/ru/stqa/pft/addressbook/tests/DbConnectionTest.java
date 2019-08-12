@@ -13,7 +13,7 @@ public class DbConnectionTest {
         Connection conn = null;
         try {
             //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/addressbook?user=root&password="); //Doesn't work with timezone
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/addressbook?user=root&password=&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Moscow");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/addressbook?user=root&password=&serverTimezone=Europe/Moscow");
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("select group_id,group_name,group_header,group_footer  from group_list");
             Groups groups = new Groups();

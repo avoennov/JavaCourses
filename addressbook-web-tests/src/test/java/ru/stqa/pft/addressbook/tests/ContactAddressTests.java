@@ -14,11 +14,11 @@ public class ContactAddressTests extends TestBase {
     @Test(enabled = true)
     public void testContactAddress() {
         app.goTo().homePage();
-        ContactData contact = app.contact().all().iterator().next();
+        ContactData contact = app.db().contacts().iterator().next();
         ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 
+        logger.info("Compare addresses\n" + "Address from contact page:\n" + contact.getAddress() + "\nAddress from edit page:\n" + mergeAddress(contactInfoFromEditForm));
         assertThat(contact.getAddress(), equalTo(mergeAddress(contactInfoFromEditForm)));
-        System.out.println(contact.getAddress() + "\n\n" + mergeAddress(contactInfoFromEditForm));
     }
 
     private String mergeAddress(ContactData contact) {
