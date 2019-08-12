@@ -16,11 +16,12 @@ public class ContactModificationTests extends TestBase {
     public void ensurePreconditions() {
         if (app.db().contacts().size() == 0) {
             app.goTo().homePage();
-            app.contact().create(new ContactData().withMiddlename("Ivanovich").withLastname("Ivanov").withNickname("AgentSmith").withTitle("Some Title").withCompany("The Matrix")
+            app.contact().create(new ContactData().withMiddlename("Ivanovich").withLastname("Ivanov").withNickname("AgentSmith")
+                    .withPhoto(new File("src/test/resources/kitten-pizza.jpg")).withTitle("Some Title").withCompany("The Matrix")
                     .withAddress("K. Marksa street, 18").withHome("01-123456-07").withMobile("02-11-223-01").withWork("14-256-01-28")
                     .withFax("214-15-78-268").withEmail("test@mail.com").withEmail2("test2@mail.com").withEmail3("test3@mail.com")
                     .withHomepage("localhost").withBday("5").withBmonth("March").withByear("2047").withFirstname("Ivan").withAday("6")
-                    .withAmonth("May").withAyear("2017").withGroup("test1").withAddress2("Lenina street, 35").withNotes("Some notes").withPhone2("35-18-29"), true);
+                    .withAmonth("May").withAyear("2017").withGroup("test 1").withAddress2("Lenina street, 35").withNotes("Some notes").withPhone2("35-18-29"), true);
         }
     }
 
