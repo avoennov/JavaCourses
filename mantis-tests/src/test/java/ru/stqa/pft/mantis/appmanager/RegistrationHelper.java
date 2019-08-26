@@ -21,4 +21,21 @@ public class RegistrationHelper extends HelperBase{
         type(By.name("password_confirm"), password);
         click(By.xpath("//span[@class='bigger-110']"));
     }
+
+    public void selectUser(String user, String passwordAdmin) {
+        wd.get(app.getProperty("web.baseUrl") + "/manage_user_page.php");
+        click(By.xpath("//a[text()='" + user + "']"));
+    }
+
+    public void login(String user, String password) {
+        wd.get(app.getProperty("web.baseUrl") + "/login_page.php");
+        type(By.name("username"), user);
+        click(By.cssSelector("input[value='Войти']"));
+        type(By.name("password"), password);
+        click(By.cssSelector("input[value='Войти']"));
+    }
+
+    public void resetPassword() {
+        click(By.cssSelector("input[value='Сбросить пароль']"));
+    }
 }

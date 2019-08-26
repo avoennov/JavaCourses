@@ -47,7 +47,7 @@ public class JamesHelper {
     public void deleteUser(String name) {
         initTelnetSession();
         write("deluser " + name);
-        String result = readUntil("User " + name + "deleted");
+        String result = readUntil("User " + name + " deleted");
         closeTelnetSession();
     }
 
