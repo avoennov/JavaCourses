@@ -145,4 +145,36 @@ public class ContactHelper extends HelperBase{
                 .withAddress(address).withHome(home).withMobile(mobile).withWork(work).withEmail(email1)
                 .withEmail2(email2).withEmail3(email3);
     }
+
+    public void addContactToGroup(ContactData contact) {
+        selectFirstContactById(contact.getId());
+        addToGroupBtn();
+    }
+
+    public void selectAllGroups() {
+        new  Select(wd.findElement(By.name("group"))).selectByVisibleText("[all]");
+    }
+
+    public void selectGroupById(int id) {
+        wd.findElement(By.name("to_group")).click();
+        wd.findElement(By.xpath(".//select[@name='to_group']/option[@value='"+ id +"']")).click();
+    }
+
+    public void addToGroupBtn() {
+        click(By.xpath("//input[@name='add']"));
+    }
+
+    public void removeContactFromGroup(ContactData contact) {
+        selectFirstContactById(contact.getId());
+        initRemoveContactFromGroup();
+    }
+
+    private void initRemoveContactFromGroup() {
+        wd.findElement(By.name("remove")).click();
+    }
+
+    public void selectGroupInFooter(int id) {
+        wd.findElement(By.name("group")).click();
+        wd.findElement(By.xpath(".//select[@name='group']/option[@value='"+ id +"']")).click();
+    }
 }
