@@ -42,7 +42,7 @@ public class TestBase {
         MantisConnectPortType mc = app.soap().getMantisConnect();
         IssueData issueData = mc.mc_issue_get("administrator", "root", BigInteger.valueOf(issueId));
         String resolution = String.valueOf(issueData.getResolution().getName());
-        System.out.println(resolution);
+        System.out.println("Issue is: " + resolution);
         if (resolution.equals("open")){
             return true;
         }
