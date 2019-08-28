@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="lessons.les2.DistanceTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-08-28T08:17:03" hostname="scorpio" time="0.007">
+  <properties/>
+  <testcase name="testDistanceDouble" classname="lessons.les2.DistanceTests" time="0.005"/>
+  <testcase name="testDistanceInt" classname="lessons.les2.DistanceTests" time="0.0"/>
+  <testcase name="testDistanceNeg" classname="lessons.les2.DistanceTests" time="0.001"/>
+  <testcase name="testDistanceZeroIn" classname="lessons.les2.DistanceTests" time="0.0"/>
+  <testcase name="testDistanceZeroOut" classname="lessons.les2.DistanceTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
